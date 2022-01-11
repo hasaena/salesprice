@@ -53,13 +53,13 @@
       <div style='display: table-cell; vertical-align: middle; width: 100vw; height: 100vh;'>
         <div style='text-align: center; margin: auto;'>
           <p>1. Buy Price</p>
-          <input type='number' id='input1' onkeyup='saveBuyPrice()'/>
+          <input type='number' pattern='\d*' placeholder='number' id='input1' onkeyup='saveBuyPrice()'/>
           <br><br>
           <p>2. Delivery Fee</p>
-          <input type='number' id='input2' onkeyup='saveDeliveryFee()'/>
+          <input type='number' pattern='\d*' placeholder='number'  id='input2' onkeyup='saveDeliveryFee()'/>
           <br><br>
           <p>3. Weight</p>
-          <input type='number' id='input3' onkeyup='saveWeight()'/>
+          <input type='number' pattern='\d*' placeholder='number'  id='input3' onkeyup='saveWeight()'/>
           <br><br><br>
           <form>
             <input type='button' style="color: gold; background:black; font-size:1em;" value='Calculate' onclick='calculatePrice()'>
