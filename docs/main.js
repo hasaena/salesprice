@@ -28,11 +28,14 @@ function calculatePrice() {
   let result = 0;
   let expectedLanding = ( Number(buyPrice) + Number(deliveryFee) + Number(weight) * 8.5 ) * 20;
   if (checkNum(buyPrice) === false || checkNum(deliveryFee) === false || checkNum(weight) === false) {
-    alert('Please input number.');
-    result = 'NaN';
+    alert('빈 칸에 숫자를 입력해주세요.');
+    result = '오류';
   } else if (Number(buyPrice) < 0 || Number(deliveryFee) < 0 || Number(weight) < 0) {
-      alert('Please input positive number.');
-      result = 'NaN';
+    alert('0보다 큰 숫자를 입력해주세요.');
+    result = '오류';
+  } else if (Number(buyPrice) < 10000) {
+    alert('10,000 KRW 미만 제품은 사장님에게 문의하세요.');
+    result = '오류';
   } else {
     if (expectedLanding > 1800000) {
       result = Math.ceil(expectedLanding * 1.08 / 10000) * 10000;
@@ -50,5 +53,5 @@ function calculatePrice() {
       result = Math.ceil(expectedLanding * 1.19 / 10000) * 10000;
     }
   }
-  document.getElementById('result').textContent = 'Sales Price: ' + result;
+  document.getElementById('result').textContent = '판매가 : ' + result;
 }
