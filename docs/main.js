@@ -54,3 +54,4 @@ function calculatePrice() {
     }
   }
   document.getElementById('result').textContent = '판매가 : ' + result;
+}
