@@ -26,7 +26,7 @@ function checkNum(string) {
 
 function calculatePrice() {
   let result = 0;
-  let expectedLanding = ( Number(buyPrice) + Number(deliveryFee) + Number(weight) * 8.8 ) * 19;
+  let expectedLanding = ( Number(buyPrice) + Number(deliveryFee) + Number(weight) * 8.8 ) * 19.39;
   if (checkNum(buyPrice) === false || checkNum(deliveryFee) === false || checkNum(weight) === false) {
     alert('빈 칸에 숫자를 입력해주세요.');
     result = '오류';
