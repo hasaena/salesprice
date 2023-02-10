@@ -26,7 +26,9 @@ function checkNum(string) {
 
 function calculatePrice() {
   let result = 0;
-  let expectedLanding = ( Number(buyPrice) + Number(deliveryFee) + Number(weight) * 8.5 ) * 19.67;  /* 230130 환율 19.1의 3% 반영 */
+  let expectedLanding = ( Number(buyPrice) + Number(deliveryFee) + Number(weight) * 8.5 ) * 19.20;  
+  /* 230130 환율 19.1의 3% 반영 */
+  /* 230210 환율 18.65의 3% 반영 */
   if (checkNum(buyPrice) === false || checkNum(deliveryFee) === false || checkNum(weight) === false) {
     alert('빈 칸에 숫자를 입력해주세요.');
     result = '오류';
