@@ -41,13 +41,13 @@ function calculatePrice() {
     result = '오류';
   } else {
     if (expectedLanding > 1500000) {
-      result = Math.ceil(expectedLanding * 1.14 / 10000) * 10000;
-    } else if (expectedLanding > 1300000) {
-      result = Math.ceil(expectedLanding * 1.15 / 10000) * 10000;
+      result = Math.ceil(expectedLanding * 1.13 / 10000) * 10000;
     } else if (expectedLanding > 900000) {
-      result = Math.ceil(expectedLanding * 1.16 / 10000) * 10000;
-    } else if (expectedLanding > 600000) {
+      result = Math.ceil(expectedLanding * 1.15 / 10000) * 10000;
+    } else if (expectedLanding > 700000) {
       result = Math.ceil(expectedLanding * 1.17 / 10000) * 10000;
+    } else if (expectedLanding > 500000) {
+      result = Math.ceil(expectedLanding * 1.19 / 10000) * 10000;
     } else if (expectedLanding > 400000) {
       result = Math.ceil(expectedLanding * 1.23 / 10000) * 10000;
     } else if (expectedLanding > 300000) {
