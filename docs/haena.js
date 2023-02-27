@@ -26,7 +26,7 @@ function checkNum(string) {
 
 function calculatePrice() {
   let result = 0;
-  let expectedLanding = ( Number(buyPrice) + Number(deliveryFee) + Number(weight) * 8.5 ) * 18.60;  
+  let expectedLanding = ( Number(buyPrice)/11*10.7 + Number(deliveryFee) + Number(weight) * 8.5 ) * 18.60;  
   /* 230130 환율 19.1의 3% 반영 */
   /* 230210 환율 18.65의 3% 반영 */
   /* 230228 환율 18.05의 3% 반영 */
