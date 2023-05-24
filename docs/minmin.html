@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
     <meta charset="utf-8">
-    <title>판매가격 계산</title>
+    <title>Tính giá bán</title>
 </head>
 
   <body style='width: 100%; height: 100%; font-family:굴림;'>
@@ -20,21 +20,21 @@
 
       <div style='display: table-cell; vertical-align: middle; width: 100vw; height: 100vh;'>
         <div style='text-align: center; margin: auto;'>
-          <p style='font-weight: bold;'>1. 구매가격(KRW)</p>
+          <p style='font-weight: bold;'>1. Giá mua tại HQ(KRW)</p>
           <p style='font-size: 10px;'>Đối với các sản phẩm dưới 5.000 KRW, hãy hỏi Manager</p>
           <input type='number' pattern='\d*' placeholder='number' id='input1' onkeyup='saveBuyPrice()'/>
           <br><br>
-          <p style='font-weight: bold;'>2. 배송비</p>
+          <p style='font-weight: bold;'>2. Phí giao hàng(KRW)</p>
           <input type='number' pattern='\d*' placeholder='number'  id='input2' onkeyup='saveDeliveryFee()'/>
           <br><br>
           <p style='font-size: 10px;'>Cẩn thận không cân ít hơn trọng lượng thực tế. Hãy hỏi Manager nếu bạn không chắc chắn.</p>            
-          <p style='font-weight: bold;'>3. 제품 무게(g)</p>
+          <p style='font-weight: bold;'>3. trọng lượng sản phẩm(g)</p>
           <input type='number' pattern='\d*' placeholder='number'  id='input3' onkeyup='saveWeight()'/>
           <br><br><br>
           <form>
-            <input type='button' style="color: gold; background:black; font-size:1em; border-radius: 15px;" value='      계산하기      ' onclick='calculatePrice()'>
+            <input type='button' style="color: gold; background:black; font-size:1em; border-radius: 15px;" value='      Tính giá      ' onclick='calculatePrice()'>
           </form>
-          <p id='result' style='font-weight: bold;'>판매가 :</p>
+          <p id='result' style='font-weight: bold;'>Giá bán VN :</p>
         </div>
       </div>
 
