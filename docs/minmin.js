@@ -26,7 +26,7 @@ function checkNum(string) {
 
 function calculatePrice() {
   let result = 0;
-  let expectedLanding = ( Number(buyPrice) + Number(deliveryFee) + Number(weight) * 8.5 ) * 20;  
+  let expectedLanding = ( Number(buyPrice) + Number(deliveryFee) + Number(weight) * 9 ) * 20;  
   /* 230130 환율 19.1의 3% 반영 */
   /* 230210 환율 18.65의 3% 반영 */
   /* 230228 환율 18.05의 3% 반영 */
@@ -61,7 +61,7 @@ function calculatePrice() {
       result = Math.ceil(expectedLanding * 1.25 / 10000) * 10000;
     }
     */
-    result = Match.ceil((expectedLanding +70000) / 10000)* 10000;
+    result = Math.ceil((expectedLanding + 50000) / 10000)* 10000;
   }
   document.getElementById('result').textContent = '판매가 : ' + result;
 }
