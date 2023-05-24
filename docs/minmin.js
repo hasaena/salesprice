@@ -63,5 +63,5 @@ function calculatePrice() {
     */
     result = Math.ceil((expectedLanding + 50000) / 10000)* 10000;
   }
-  document.getElementById('result').textContent = '판매가 : ' + result;
+  document.getElementById('result').textContent = 'Giá bán VN : ' + result;
 }
