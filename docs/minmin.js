@@ -26,23 +26,25 @@ function checkNum(string) {
 
 function calculatePrice() {
   let result = 0;
-  let expectedLanding = ( Number(buyPrice) + Number(deliveryFee) + Number(weight) * 8.5 ) * 18.11;  
+  let expectedLanding = ( Number(buyPrice) + Number(deliveryFee) + Number(weight) * 8.5 ) * 20;  
   /* 230130 환율 19.1의 3% 반영 */
   /* 230210 환율 18.65의 3% 반영 */
   /* 230228 환율 18.05의 3% 반영 */
   /* 230403 환율 17.83의 3% 반영 */
   /* 230425 환율 17.58의 3% 반영 */
+  /* 230524 서브매니저/스태프에게 오픈하면서 환율 넉넉하게 조정(현재 6.56%) */
   
   if (checkNum(buyPrice) === false || checkNum(deliveryFee) === false || checkNum(weight) === false) {
-    alert('빈 칸에 숫자를 입력해주세요.');
-    result = '오류';
+    alert('Vui lòng nhập một số vào trường trống');
+    result = 'Error';
   } else if (Number(buyPrice) < 0 || Number(deliveryFee) < 0 || Number(weight) < 0) {
-    alert('0보다 큰 숫자를 입력해주세요.');
-    result = '오류';
-  } else if (Number(buyPrice) < 8000) {
-    alert('8,000 KRW 미만 제품은 사장님에게 문의하세요.');
-    result = '오류';
+    alert('Vui lòng nhập một số lớn hơn 0');
+    result = 'Error';
+  } else if (Number(buyPrice) < 5000) {
+    alert('Đối với các sản phẩm dưới 5.000 KRW, hãy hỏi Manager');
+    result = 'Error';
   } else {
+    /*
     if (expectedLanding > 1800000) {
       result = Math.ceil(expectedLanding * 1.08 / 10000) * 10000;
     } else if (expectedLanding > 1500000) {
@@ -58,6 +60,8 @@ function calculatePrice() {
     } else {
       result = Math.ceil(expectedLanding * 1.25 / 10000) * 10000;
     }
+    */
+    result = Match.ceil((expectedLanding +70000) / 10000)* 10000;
   }
   document.getElementById('result').textContent = '판매가 : ' + result;
 }
