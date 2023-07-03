@@ -26,14 +26,14 @@ function checkNum(string) {
 
 function calculatePrice() {
   let result = 0;
-  let expectedLanding = ( Number(buyPrice) + Number(deliveryFee) + Number(weight) * 9 ) * 20;  
+  let expectedLanding = ( Number(buyPrice) + Number(deliveryFee) + Number(weight) * 9 ) * 19.5;  
   /* 230130 환율 19.1의 3% 반영 */
   /* 230210 환율 18.65의 3% 반영 */
   /* 230228 환율 18.05의 3% 반영 */
   /* 230403 환율 17.83의 3% 반영 */
   /* 230425 환율 17.58의 3% 반영 */
   /* 230524 서브매니저/스태프에게 오픈하면서 환율 넉넉하게 조정(현재 6.56%) */
-  /* 230703 비싼제품들 마진율이 너무 낮아서 마진율 조정 */
+  /* 230703 비싼제품들 마진율이 너무 낮아서 환율베이스 계산식으로 다시 쓰고 마진율 조정 */
   
   if (checkNum(buyPrice) === false || checkNum(deliveryFee) === false || checkNum(weight) === false) {
     alert('Vui lòng nhập một số vào trường trống');
@@ -45,7 +45,7 @@ function calculatePrice() {
     alert('Đối với các sản phẩm dưới 5.000 KRW, hãy hỏi Manager');
     result = 'Error';
   } else {
-    /*
+    
     if (expectedLanding > 1800000) {
       result = Math.ceil(expectedLanding * 1.26 / 10000) * 10000;
     } else if (expectedLanding > 1500000) {
@@ -61,8 +61,10 @@ function calculatePrice() {
     } else {
       result = Math.ceil(expectedLanding * 1.38 / 10000) * 10000;
     }
-    */
+    
+    /*
     result = Math.ceil((expectedLanding + 50000) / 10000)* 10000;
+    */
   }
   document.getElementById('result').textContent = 'Giá bán VN : ' + result;
 }
