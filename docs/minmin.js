@@ -45,26 +45,23 @@ function calculatePrice() {
     alert('Đối với các sản phẩm dưới 5.000 KRW, hãy hỏi Manager');
     result = 'Error';
   } else {
-    
-    if (expectedLanding > 1800000) {
-      result = Math.ceil(expectedLanding * 1.26 / 10000) * 10000;
-    } else if (expectedLanding > 1500000) {
+    if (expectedLanding > 1500000) {
       result = Math.ceil(expectedLanding * 1.28 / 10000) * 10000;
-    } else if (expectedLanding > 1200000) {
-      result = Math.ceil(expectedLanding * 1.30 / 10000) * 10000;
     } else if (expectedLanding > 900000) {
+      result = Math.ceil(expectedLanding * 1.30 / 10000) * 10000;
+    } else if (expectedLanding > 700000) {
       result = Math.ceil(expectedLanding * 1.32 / 10000) * 10000;
-    } else if (expectedLanding > 600000) {
+    } else if (expectedLanding > 500000) {
       result = Math.ceil(expectedLanding * 1.34 / 10000) * 10000;
-    } else if (expectedLanding > 300000) {
+    } else if (expectedLanding > 400000) {
       result = Math.ceil(expectedLanding * 1.36 / 10000) * 10000;
-    } else {
+    } else if (expectedLanding > 300000) {
       result = Math.ceil(expectedLanding * 1.38 / 10000) * 10000;
+    } else if (expectedLanding > 200000) {
+      result = Math.ceil(expectedLanding * 1.40 / 10000) * 10000;
+    } else {
+      result = Math.ceil(expectedLanding * 1.42 / 10000) * 10000;
     }
-    
-    /*
-    result = Math.ceil((expectedLanding + 50000) / 10000)* 10000;
-    */
   }
-  document.getElementById('result').textContent = 'Giá bán VN : ' + result;
+  document.getElementById('result').textContent = '판매가 : ' + result;
 }
