@@ -33,6 +33,7 @@ function calculatePrice() {
   /* 230403 환율 17.83의 3% 반영 */
   /* 230425 환율 17.58의 3% 반영 */
   /* 230524 서브매니저/스태프에게 오픈하면서 환율 넉넉하게 조정(현재 6.56%) */
+  /* 230703 비싼제품들 마진율이 너무 낮아서 마진율 조정 */
   
   if (checkNum(buyPrice) === false || checkNum(deliveryFee) === false || checkNum(weight) === false) {
     alert('Vui lòng nhập một số vào trường trống');
@@ -46,22 +47,22 @@ function calculatePrice() {
   } else {
     /*
     if (expectedLanding > 1800000) {
-      result = Math.ceil(expectedLanding * 1.08 / 10000) * 10000;
+      result = Math.ceil(expectedLanding * 1.30 / 10000) * 10000;
     } else if (expectedLanding > 1500000) {
-      result = Math.ceil(expectedLanding * 1.09 / 10000) * 10000;
+      result = Math.ceil(expectedLanding * 1.32 / 10000) * 10000;
     } else if (expectedLanding > 1200000) {
-      result = Math.ceil(expectedLanding * 1.11 / 10000) * 10000;
+      result = Math.ceil(expectedLanding * 1.34 / 10000) * 10000;
     } else if (expectedLanding > 900000) {
-      result = Math.ceil(expectedLanding * 1.15 / 10000) * 10000;
+      result = Math.ceil(expectedLanding * 1.36 / 10000) * 10000;
     } else if (expectedLanding > 600000) {
-      result = Math.ceil(expectedLanding * 1.18 / 10000) * 10000;
+      result = Math.ceil(expectedLanding * 1.38 / 10000) * 10000;
     } else if (expectedLanding > 300000) {
-      result = Math.ceil(expectedLanding * 1.22 / 10000) * 10000;
+      result = Math.ceil(expectedLanding * 1.40 / 10000) * 10000;
     } else {
-      result = Math.ceil(expectedLanding * 1.25 / 10000) * 10000;
+      result = Math.ceil(expectedLanding * 1.42 / 10000) * 10000;
     }
     */
-    result = Math.ceil((expectedLanding + 50000) / 10000)* 10000;
+    result = Math.ceil((expectedLanding + 30000) / 10000)* 10000;
   }
   document.getElementById('result').textContent = 'Giá bán VN : ' + result;
 }
