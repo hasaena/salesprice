@@ -52,15 +52,15 @@ function calculatePrice() {
     } else if (expectedLanding > 700000) {
       result = Math.ceil(expectedLanding * 1.32 / 10000) * 10000;
     } else if (expectedLanding > 500000) {
-      result = Math.ceil(expectedLanding * 1.34 / 10000) * 10000;
+      result = Math.ceil(expectedLanding * 1.34 / 10000) * 10000 + 10000;
     } else if (expectedLanding > 400000) {
-      result = Math.ceil(expectedLanding * 1.36 / 10000) * 10000;
+      result = Math.ceil(expectedLanding * 1.36 / 10000) * 10000 + 20000;
     } else if (expectedLanding > 300000) {
-      result = Math.ceil(expectedLanding * 1.38 / 10000) * 10000;
+      result = Math.ceil(expectedLanding * 1.38 / 10000) * 10000 + 30000;
     } else if (expectedLanding > 200000) {
-      result = Math.ceil(expectedLanding * 1.40 / 10000) * 10000;
+      result = Math.ceil(expectedLanding * 1.40 / 10000) * 10000 + 40000;
     } else {
-      result = Math.ceil(expectedLanding * 1.42 / 10000) * 10000;
+      result = Math.ceil(expectedLanding * 1.42 / 10000) * 10000 + 50000;
     }
   }
   document.getElementById('result').textContent = '판매가 : ' + result;
