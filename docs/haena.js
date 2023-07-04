@@ -26,13 +26,14 @@ function checkNum(string) {
 
 function calculatePrice() {
   let result = 0;
-  let expectedLanding = ( Number(buyPrice)/11*10.6 + Number(deliveryFee) + Number(weight) * 8.5 ) * 19.1;  
+  let expectedLanding = ( Number(buyPrice)/11*10.6 + Number(deliveryFee) + Number(weight) * 8.2 ) * 18.85;  
   /* 230130 환율 19.1의 3% 반영 */
   /* 230210 환율 18.65의 3% 반영 */
   /* 230228 환율 18.05의 3% 반영 */
   /* 230403 환율 17.82의 3% 반영 */
   /* 230425 환율 17.58의 3% 반영 */
   /* 230614 환율 18.54의 3% 반영 */
+  /* 230705 환율 18.29의 3% 반영, 배송비 변경 */
   if (checkNum(buyPrice) === false || checkNum(deliveryFee) === false || checkNum(weight) === false) {
     alert('빈 칸에 숫자를 입력해주세요.');
     result = '오류';
@@ -44,21 +45,21 @@ function calculatePrice() {
     result = '오류';
   } else {
     if (expectedLanding > 1500000) {
-      result = Math.ceil(expectedLanding * 1.13 / 10000) * 10000;
+      result = Math.ceil(expectedLanding * 1.23 / 10000) * 10000;
     } else if (expectedLanding > 900000) {
-      result = Math.ceil(expectedLanding * 1.15 / 10000) * 10000;
+      result = Math.ceil(expectedLanding * 1.23 / 10000) * 10000;
     } else if (expectedLanding > 700000) {
-      result = Math.ceil(expectedLanding * 1.17 / 10000) * 10000;
+      result = Math.ceil(expectedLanding * 1.23 / 10000) * 10000;
     } else if (expectedLanding > 500000) {
-      result = Math.ceil(expectedLanding * 1.19 / 10000) * 10000 + 10000;
+      result = Math.ceil(expectedLanding * 1.23 / 10000) * 10000 + 10000;
     } else if (expectedLanding > 400000) {
-      result = Math.ceil(expectedLanding * 1.22 / 10000) * 10000 + 20000;
+      result = Math.ceil(expectedLanding * 1.25 / 10000) * 10000 + 20000;
     } else if (expectedLanding > 300000) {
-      result = Math.ceil(expectedLanding * 1.25 / 10000) * 10000 + 30000;
+      result = Math.ceil(expectedLanding * 1.27 / 10000) * 10000 + 10000;
     } else if (expectedLanding > 200000) {
-      result = Math.ceil(expectedLanding * 1.28 / 10000) * 10000 + 40000;
+      result = Math.ceil(expectedLanding * 1.30 / 10000) * 10000 + 20000;
     } else {
-      result = Math.ceil(expectedLanding * 1.35 / 10000) * 10000 + 50000;
+      result = Math.ceil(expectedLanding * 1.35 / 10000) * 10000 + 30000;
     }
   }
   document.getElementById('result').textContent = '판매가 : ' + result;
