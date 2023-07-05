@@ -26,7 +26,7 @@ function checkNum(string) {
 
 function calculatePrice() {
   let result = 0;
-  let expectedLanding = ( Number(buyPrice) + Number(deliveryFee) + Number(weight) * 9 ) * 19.5;  
+  let expectedLanding = ( Number(buyPrice) + Number(deliveryFee) + Number(weight) * 9 ) * 19.2;  
   /* 230130 환율 19.1의 3% 반영 */
   /* 230210 환율 18.65의 3% 반영 */
   /* 230228 환율 18.05의 3% 반영 */
@@ -46,21 +46,21 @@ function calculatePrice() {
     result = 'Error';
   } else {
     if (expectedLanding > 1500000) {
-      result = Math.ceil(expectedLanding * 1.28 / 10000) * 10000;
+      result = Math.ceil(expectedLanding * 1.26 / 10000) * 10000;
     } else if (expectedLanding > 900000) {
-      result = Math.ceil(expectedLanding * 1.30 / 10000) * 10000;
+      result = Math.ceil(expectedLanding * 1.28 / 10000) * 10000;
     } else if (expectedLanding > 700000) {
-      result = Math.ceil(expectedLanding * 1.32 / 10000) * 10000;
+      result = Math.ceil(expectedLanding * 1.30 / 10000) * 10000;
     } else if (expectedLanding > 500000) {
-      result = Math.ceil(expectedLanding * 1.34 / 10000) * 10000;
+      result = Math.ceil(expectedLanding * 1.30 / 10000) * 10000;
     } else if (expectedLanding > 400000) {
-      result = Math.ceil(expectedLanding * 1.36 / 10000) * 10000;
+      result = Math.ceil(expectedLanding * 1.33 / 10000) * 10000;
     } else if (expectedLanding > 300000) {
-      result = Math.ceil(expectedLanding * 1.38 / 10000) * 10000 + 10000;
+      result = Math.ceil(expectedLanding * 1.35 / 10000) * 10000 + 10000;
     } else if (expectedLanding > 200000) {
-      result = Math.ceil(expectedLanding * 1.40 / 10000) * 10000 + 20000;
+      result = Math.ceil(expectedLanding * 1.38 / 10000) * 10000 + 20000;
     } else {
-      result = Math.ceil(expectedLanding * 1.42 / 10000) * 10000 + 30000;
+      result = Math.ceil(expectedLanding * 1.40 / 10000) * 10000 + 30000;
     }
   }
   document.getElementById('result').textContent = '판매가 : ' + result;
