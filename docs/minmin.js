@@ -35,6 +35,7 @@ function calculatePrice() {
   /* 230524 서브매니저/스태프에게 오픈하면서 환율 넉넉하게 조정(현재 6.56%) */
   /* 230703 비싼제품들 마진율이 너무 낮아서 환율베이스 계산식으로 다시 쓰고 마진율 조정 */
   /* 240717 스태프들 가격 계산 너무 비싸서 다시 조정, 무게 9->8.5, 환율 19.2 -> 19.4, 마진 낮추기 */
+  /* 220331 도토리몰 다같이 사용하기 위해 다시 조정. 무게 8.5유지, 환율 19.4 -> 19 환율조정, 마진2%씩 낮춤 */
   
   if (checkNum(buyPrice) === false || checkNum(deliveryFee) === false || checkNum(weight) === false) {
     alert('Vui lòng nhập một số vào trường trống');
@@ -47,21 +48,21 @@ function calculatePrice() {
     result = 'Error';
   } else {
     if (expectedLanding > 1500000) {
-      result = Math.ceil(expectedLanding * 1.22 / 10000) * 10000;
+      result = Math.ceil(expectedLanding * 1.20 / 10000) * 10000;
     } else if (expectedLanding > 900000) {
-      result = Math.ceil(expectedLanding * 1.24 / 10000) * 10000;
+      result = Math.ceil(expectedLanding * 1.22 / 10000) * 10000;
     } else if (expectedLanding > 700000) {
-      result = Math.ceil(expectedLanding * 1.26 / 10000) * 10000;
+      result = Math.ceil(expectedLanding * 1.24 / 10000) * 10000;
     } else if (expectedLanding > 500000) {
       result = Math.ceil(expectedLanding * 1.26 / 10000) * 10000;
     } else if (expectedLanding > 400000) {
-      result = Math.ceil(expectedLanding * 1.29 / 10000) * 10000;
+      result = Math.ceil(expectedLanding * 1.27 / 10000) * 10000;
     } else if (expectedLanding > 300000) {
-      result = Math.ceil(expectedLanding * 1.32 / 10000) * 10000 + 10000;
+      result = Math.ceil(expectedLanding * 1.30 / 10000) * 10000 + 10000;
     } else if (expectedLanding > 200000) {
-      result = Math.ceil(expectedLanding * 1.34 / 10000) * 10000 + 20000;
+      result = Math.ceil(expectedLanding * 1.32 / 10000) * 10000 + 20000;
     } else {
-      result = Math.ceil(expectedLanding * 1.36 / 10000) * 10000 + 30000;
+      result = Math.ceil(expectedLanding * 1.34 / 10000) * 10000 + 30000;
     }
   }
   document.getElementById('result').textContent = '판매가 : ' + result;
