@@ -38,7 +38,7 @@ function calculatePrice() {
   /* 250331 도토리몰 다같이 사용하기 위해 다시 조정. 무게 8.5유지, 환율 19.4 -> 19 환율조정, 마진2%씩 낮춤 */
   /* 250618 판매가격 너무 싸다고 살짝씩 올려달라고 해서 실제환율 19.01 + 5%해서 20으로 변경 */
   
-  if (checkNum(buyPrice) === false || checkNum(deliveryFee) === false || checkNum(weight) === false) {
+  if (checkNum(buyPrice) === false || checkNum(weight) === false) {
     alert('Vui lòng nhập một số vào trường trống');
     result = 'Error';
   } else if (Number(buyPrice) < 0 || Number(deliveryFee) < 0 || Number(weight) < 0) {
