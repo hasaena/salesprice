@@ -3,10 +3,11 @@ function saveBuyPrice() {
   buyPrice = document.getElementById('input1').value;
 }
 
-let deliveryFee = -1;
-function saveDeliveryFee() {
-  deliveryFee = document.getElementById('input2').value;
-}
+
+// let deliveryFee = -1;
+// function saveDeliveryFee() {
+//   deliveryFee = document.getElementById('input2').value;
+// }
 
 let weight = -1;
 function saveWeight() {
@@ -26,7 +27,9 @@ function checkNum(string) {
 
 function calculatePrice() {
   let result = 0;
-  let expectedLanding = ( Number(buyPrice) + Number(deliveryFee) + Number(weight) * 8.74 ) * 20;  
+  // let expectedLanding = ( Number(buyPrice) + Number(deliveryFee) + Number(weight) * 8.74 ) * 20;  
+  let expectedLanding = ( Number(buyPrice) + Number(weight) * 8.74 ) * 20;  
+
   /* 230130 환율 19.1의 3% 반영 */
   /* 230210 환율 18.65의 3% 반영 */
   /* 230228 환율 18.05의 3% 반영 */
@@ -41,7 +44,8 @@ function calculatePrice() {
   if (checkNum(buyPrice) === false || checkNum(weight) === false) {
     alert('Vui lòng nhập một số vào trường trống');
     result = 'Error';
-  } else if (Number(buyPrice) < 0 || Number(deliveryFee) < 0 || Number(weight) < 0) {
+  // } else if (Number(buyPrice) < 0 || Number(deliveryFee) < 0 || Number(weight) < 0) {
+  } else if (Number(buyPrice) < 0 || Number(weight) < 0) {  
     alert('Vui lòng nhập một số lớn hơn 0');
     result = 'Error';
   } else if (Number(buyPrice) < 5000) {
