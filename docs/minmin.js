@@ -26,7 +26,7 @@ function checkNum(string) {
 
 function calculatePrice() {
   let result = 0;
-  let expectedLanding = ( Number(buyPrice) + Number(deliveryFee) + Number(weight) * 8.5 ) * 19;  
+  let expectedLanding = ( Number(buyPrice) + Number(deliveryFee) + Number(weight) * 8.5 ) * 20;  
   /* 230130 환율 19.1의 3% 반영 */
   /* 230210 환율 18.65의 3% 반영 */
   /* 230228 환율 18.05의 3% 반영 */
@@ -35,7 +35,8 @@ function calculatePrice() {
   /* 230524 서브매니저/스태프에게 오픈하면서 환율 넉넉하게 조정(현재 6.56%) */
   /* 230703 비싼제품들 마진율이 너무 낮아서 환율베이스 계산식으로 다시 쓰고 마진율 조정 */
   /* 240717 스태프들 가격 계산 너무 비싸서 다시 조정, 무게 9->8.5, 환율 19.2 -> 19.4, 마진 낮추기 */
-  /* 220331 도토리몰 다같이 사용하기 위해 다시 조정. 무게 8.5유지, 환율 19.4 -> 19 환율조정, 마진2%씩 낮춤 */
+  /* 250331 도토리몰 다같이 사용하기 위해 다시 조정. 무게 8.5유지, 환율 19.4 -> 19 환율조정, 마진2%씩 낮춤 */
+  /* 250618 판매가격 너무 싸다고 살짝씩 올려달라고 해서 실제환율 19.01 + 5%해서 20으로 변경 */
   
   if (checkNum(buyPrice) === false || checkNum(deliveryFee) === false || checkNum(weight) === false) {
     alert('Vui lòng nhập một số vào trường trống');
