@@ -70,5 +70,5 @@ function calculatePrice() {
       result = Math.ceil(expectedLanding * 1.34 / 10000) * 10000 + 30000;
     }
   }
-  document.getElementById('result').textContent = 'Giá bán : ' + result;
+  document.getElementById('result').textContent = 'Giá bán VN: ' + result;
 }
